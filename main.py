@@ -1,5 +1,11 @@
 import os
 import psycopg2
+import uvicorn
+from app import app  # tu instancia FastAPI
+
+if __name__ == "__main__":
+    port = int(os.environ["DATABRICKS_APP_PORT"])
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 conn = psycopg2.connect(
     host=os.environ["DB_HOST"],
