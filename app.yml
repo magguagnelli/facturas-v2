@@ -1,6 +1,11 @@
 env:
-  DB_HOST: "{{secrets/facturas-secrets/DB_HOST}}"
-  DB_NAME: "{{secrets/facturas-secrets/DB_NAME}}"
-  DB_USER: "{{secrets/facturas-secrets/DB_USER}}"
-  DB_PORT: "{{secrets/facturas-secrets/DB_PORT}}"
-  DB_PASSWORD: "{{secrets/facturas-secrets/DB_PASSWORD}}"
+  - name: DB_HOST
+    value: "{{secrets/facturas-secrets/DB_HOST}}"
+  - name: DB_NAME
+    value: "{{secrets/facturas-secrets/DB_NAME}}"
+  - name: DB_USER
+    value: "{{secrets/facturas-secrets/DB_USER}}"
+  - name: DB_PASSWORD
+    value: "{{secrets/facturas-secrets/DB_PASSWORD}}"
+  - name: DB_PORT
+    value: "{{secrets/facturas-secrets/DB_PORT}}"
