@@ -16,13 +16,13 @@ HOJAS_REQUERIDAS = {
     "Partida": ["No. De contrato", "Clave Partida", "Descripcion corta", "Monto asignado", "RFC Proveedor"]
 }
 
-DB_CONFIG = {
-    "host": os.getenv("DB_HOST"),
-    "port": int(os.getenv("DB_PORT", 5432)),
-    "dbname": os.getenv("DB_NAME"),
-    "user": os.getenv("DB_USER"),
-    "password": os.getenv("DB_PASSWORD"),
-}
+DB_CONFIG = psycopg2.connect(
+    host=os.environ["DB_HOST"],
+    dbname=os.environ["DB_NAME"],
+    port=os.environ("DB_PORT"),
+    user=os.environ["DB_USER"],
+    password=os.environ["DB_PASSWORD"],
+)
 
 # --------------------------------------------------
 # NORMALIZAR TEXTO (MAYÚSCULAS + SIN ACENTOS)
