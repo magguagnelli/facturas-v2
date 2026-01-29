@@ -7,5 +7,3 @@ env:
     value: "{{secrets/facturas-secrets/DB_USER}}"
   - name: DB_PASSWORD
     value: "{{secrets/facturas-secrets/DB_PASSWORD}}"
-  - name: DB_PORT
-    value: "{{secrets/facturas-secrets/DB_PORT}}"
