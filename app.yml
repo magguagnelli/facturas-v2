@@ -1,4 +1,3 @@
-command: ["uvicorn", "backend.main:app"]
 env:
   - name: DB_HOST
     valueFrom: secret_db_host
