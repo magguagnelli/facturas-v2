@@ -1,9 +1,35 @@
+command: ["uvicorn", "backend.main:app"]
+resources:
+  secret_db_host:
+    type: secret
+    scope: facturas-secrets
+    key: DB_HOST
+    permission: CAN_READ
+
+  secret_db_name:
+    type: secret
+    scope: facturas-secrets
+    key: DB_NAME
+    permission: CAN_READ
+
+  secret_db_user:
+    type: secret
+    scope: facturas-secrets
+    key: DB_USER
+    permission: CAN_READ
+
+  secret_db_password:
+    type: secret
+    scope: facturas-secrets
+    key: DB_PASSWORD
+    permission: CAN_READ
+
 env:
   - name: DB_HOST
-    value: "{{secrets/facturas-secrets/DB_HOST}}"
+    valueFrom: secret_db_host
   - name: DB_NAME
-    value: "{{secrets/facturas-secrets/DB_NAME}}"
+    valueFrom: secret_db_name
   - name: DB_USER
-    value: "{{secrets/facturas-secrets/DB_USER}}"
+    valueFrom: secret_db_user
   - name: DB_PASSWORD
-    value: "{{secrets/facturas-secrets/DB_PASSWORD}}"
+    valueFrom: secret_db_password
