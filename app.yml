@@ -1,13 +1,3 @@
-env:
-  - name: DB_HOST
-    valueFrom: secret_db_host
-  - name: DB_NAME
-    valueFrom: secret_db_name
-  - name: DB_USER
-    valueFrom: secret_db_user
-  - name: DB_PASSWORD
-    valueFrom: secret_db_password
-
 resources:
   secret_db_host:
     type: secret
@@ -32,3 +22,13 @@ resources:
     scope: facturas-secrets
     key: DB_PASSWORD
     permission: CAN_READ
+
+env:
+  - name: DB_HOST
+    valueFrom: secret_db_host
+  - name: DB_NAME
+    valueFrom: secret_db_name
+  - name: DB_USER
+    valueFrom: secret_db_user
+  - name: DB_PASSWORD
+    valueFrom: secret_db_password
