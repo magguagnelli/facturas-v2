@@ -9,7 +9,6 @@ router = APIRouter(prefix="/cfdi")
 DB_CONFIG = psycopg2.connect(
     host=os.environ["DB_HOST"],
     dbname=os.environ["DB_NAME"],
-    port=os.environ("DB_PORT"),
     user=os.environ["DB_USER"],
     password=os.environ["DB_PASSWORD"],
 )
