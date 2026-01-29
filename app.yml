@@ -1,0 +1,5 @@
+env:
+  DB_HOST: "{{secrets/facturas-secrets/DB_HOST}}"
+  DB_NAME: "{{secrets/facturas-secrets/DB_NAME}}"
+  DB_USER: "{{secrets/facturas-secrets/DB_USER}}"
+  DB_PASSWORD: "{{secrets/facturas-secrets/DB_PASSWORD}}"

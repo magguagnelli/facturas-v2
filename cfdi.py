@@ -6,13 +6,12 @@ import os
 
 router = APIRouter(prefix="/cfdi")
 
-DB_CONFIG = {
-    "host": os.getenv("DB_HOST"),
-    "port": int(os.getenv("DB_PORT", 5432)),
-    "dbname": os.getenv("DB_NAME"),
-    "user": os.getenv("DB_USER"),
-    "password": os.getenv("DB_PASSWORD"),
-}
+DB_CONFIG = psycopg2.connect(
+    host=os.environ["DB_HOST"],
+    dbname=os.environ["DB_NAME"],
+    user=os.environ["DB_USER"],
+    password=os.environ["DB_PASSWORD"],
+)
 
 # --------------------------------------------------
 # XML → dict limpio
